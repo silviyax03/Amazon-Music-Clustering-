@@ -96,7 +96,7 @@ Genre Inference
 Business Insights
       ↓
 Final Clustered Dataset
-
+```
 ---
 
 # 🔍 Data Exploration & Preprocessing
