@@ -64,7 +64,7 @@ With millions of songs on music platforms, manually categorizing them is difficu
 
 Song and artist identification fields were retained for reference but were not used as clustering features.
 
----
+c
 
 ## Project Workflow
 
@@ -96,3 +96,58 @@ Genre Inference
 Business Insights
       ↓
 Final Clustered Dataset
+
+---
+
+# 🔍 Data Exploration & Preprocessing
+
+The dataset was analyzed to understand its structure and quality.
+
+## Data Quality Results
+
+- Missing values: **0**
+- Duplicate rows: **0**
+- Records analyzed: **95,837**
+
+The selected audio features were standardized using **StandardScaler** because K-Means clustering is distance-based.
+
+---
+
+# 🎧 Feature Selection
+
+The following 10 audio features were selected for clustering:
+
+- danceability
+- energy
+- loudness
+- speechiness
+- acousticness
+- instrumentalness
+- liveness
+- valence
+- tempo
+- duration_ms
+
+These features represent rhythm, mood, energy, instrumentation, and other characteristics of a song.
+
+---
+
+# 📐 Choosing the Number of Clusters
+
+## Elbow Method
+
+K values from **2 to 10** were tested using inertia (SSE) to analyze cluster compactness.
+<img width="856" height="536" alt="image" src="https://github.com/user-attachments/assets/582216d9-793e-4277-9002-1f4e200de57e" />
+
+
+## Silhouette Analysis
+
+A random sample of **10,000 songs** was used to compare silhouette scores efficiently.
+<img width="772" height="502" alt="image" src="https://github.com/user-attachments/assets/1f776b74-ac94-4ec8-918a-ee859b7c7ed2" />
+
+
+The highest silhouette score was obtained at:
+
+**K = 3 → 0.2364**
+
+Therefore, **3 clusters** were selected for the final K-Means model.
