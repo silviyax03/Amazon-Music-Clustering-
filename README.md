@@ -1,5 +1,3 @@
-# Amazon-Music-Clustering-
-Amazon Music Clustering - To group songs with similar audio characteristics using K-Means clustering and identify meaningful audio-profile clusters without using predefined genre labels.
 # Amazon Music Clustering
 
 ## Project Overview
@@ -151,3 +149,117 @@ The highest silhouette score was obtained at:
 **K = 3 → 0.2364**
 
 Therefore, **3 clusters** were selected for the final K-Means model.
+
+---
+
+# 🤖 K-Means Clustering
+
+The final K-Means model was trained using:
+
+- **Number of Clusters:** 3
+- **Random State:** 42
+- **n_init:** 10
+
+Each of the **95,837 songs** was assigned to one of the three clusters.
+
+---
+
+# 📊 Cluster Evaluation
+
+| Metric | Result |
+|---|---:|
+| Number of Clusters | **3** |
+| Songs Analyzed | **95,837** |
+| Silhouette Score | **0.2423** |
+| Davies-Bouldin Index | **1.5702** |
+| Inertia | **658,335.08** |
+
+The results indicate moderate separation between the clusters.
+
+---
+
+# 📊 Cluster Distribution
+
+| Cluster | Number of Songs |
+|---|---:|
+| Cluster 0 | **12,513** |
+| Cluster 1 | **30,807** |
+| Cluster 2 | **52,517** |
+<img width="591" height="381" alt="image" src="https://github.com/user-attachments/assets/c001e67e-93f1-491c-a312-0b50d988a2f6" />
+
+---
+
+# 🧩 PCA Analysis
+
+PCA was used for visualization by reducing the 10 standardized audio features to **2 principal components**.
+
+- **PC1:** 27.08%
+- **PC2:** 18.82%
+- **Total explained variance:** **45.90%**
+
+PCA was used only for visualization; the original standardized features were used for K-Means clustering.
+
+<img width="701" height="470" alt="image" src="https://github.com/user-attachments/assets/0abf59f3-1c00-4396-8840-e2956ab037d8" />
+
+---
+
+# 🔎 Cluster Profiling
+
+## Cluster 0 — Speech / Spoken-Content Profile
+
+- Very high speechiness
+- Higher liveness
+- Shorter average duration
+- Strong association with spoken-content genres
+
+## Cluster 1 — Acoustic / Instrumental Profile
+
+- Highest acousticness
+- Highest instrumentalness
+- Lower energy
+- Lower valence
+- More acoustic and instrumental characteristics
+
+## Cluster 2 — Energetic / Upbeat Profile
+
+- Highest energy
+- Highest loudness
+- Highest valence
+- Higher tempo
+- More energetic and upbeat characteristics
+
+The clusters represent **audio profiles rather than guaranteed musical genres**.
+
+<img width="1107" height="542" alt="image" src="https://github.com/user-attachments/assets/fdfb546c-8caa-4bca-8d51-d24823179fc8" />
+<img width="969" height="683" alt="image" src="https://github.com/user-attachments/assets/357c70b8-31dc-4230-987c-a11991699e50" />
+
+---
+
+# 🎼 Genre Inference
+
+Genre information was analyzed **after clustering** to help interpret the resulting audio profiles.
+
+Genre labels were **not used as input features for K-Means**.
+
+The analysis showed that songs from different genres can belong to the same cluster when they have similar audio characteristics.
+
+### Cluster 0
+
+- Dominated by **Hoerspiel** and **Kleine Hoerspiel**
+- Strong association with speech-heavy content
+<img width="582" height="367" alt="image" src="https://github.com/user-attachments/assets/a591427b-75c9-40cf-a38a-5a7ce85c3b5c" />
+
+### Cluster 1
+
+- Major genres include **Vintage Taiwan Pop, Classic Israeli Pop, Chanson, and Classic Soundtrack**
+- Consistent with its more acoustic and instrumental profile
+<img width="564" height="367" alt="image" src="https://github.com/user-attachments/assets/b1592f10-fbd4-4aa9-a07b-2717e45c1079" />
+
+### Cluster 2
+
+- Major genres include **J-Pop, Turkish Pop, Classic Thai Pop, and Thai Pop**
+- Consistent with its more energetic and upbeat profile
+<img width="583" height="374" alt="image" src="https://github.com/user-attachments/assets/90f6808e-39a9-434a-a5bb-2c94cdf01cc7" />
+
+---
+
