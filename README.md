@@ -263,3 +263,66 @@ The analysis showed that songs from different genres can belong to the same clus
 
 ---
 
+# 💼 Business Use Cases
+
+## Personalized Playlist Curation
+
+Group songs with similar audio characteristics to create targeted playlists.
+
+## Improved Song Discovery
+
+Recommend songs from similar audio-profile clusters based on user preferences.
+
+## Artist Analysis
+
+Compare songs with tracks that have similar audio characteristics.
+
+## Music Content Segmentation
+
+Separate different types of music and spoken content based on their audio profiles.
+
+---
+
+# 📋 Final Results
+
+The project successfully grouped **95,837 songs into three audio-profile clusters** using K-Means clustering.
+
+## Final Cluster Summary
+
+| Cluster | Profile |
+|---|---|
+| Cluster 0 | Speech / Spoken-Content |
+| Cluster 1 | Acoustic / Instrumental |
+| Cluster 2 | Energetic / Upbeat |
+
+## Final Model Metrics
+
+- **Silhouette Score:** 0.2423
+- **Davies-Bouldin Index:** 1.5702
+- **Inertia:** 658,335.08
+
+---
+
+# 📁 Project Outputs
+
+- `Amazon_Music_Clustering.ipynb`
+- `amazon_music_clustered.csv`
+- `visualizations/`
+
+## Final CSV
+
+The final dataset contains the original song information along with the assigned **cluster label**.
+
+---
+
+# ✅ Conclusion
+
+The Amazon Music Clustering project demonstrates how unsupervised machine learning can organize a large music catalog based on audio characteristics.
+
+Using K-Means clustering with three clusters, the project identified distinct speech-oriented, acoustic/instrumental, and energetic/upbeat audio profiles. These results can support playlist curation, song discovery, artist analysis, and music-content segmentation.
+
+---
+
+# 👩‍💻 Author
+
+**Silviya X**
